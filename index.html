@@ -1,18 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webcamp - Watch Anime</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Futuristic Search App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #222;
+            box-shadow: 0 0 10px #0f0;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        .icons img {
+            width: 50px;
+            height: 50px;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .article {
+            background: #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Webcamp</h1>
-    <input type="text" id="search" placeholder="Search Anime...">
-    <div class="anime-list" id="animeList">
-        <button onclick="watchAnime('123')">Watch Episode 1</button>
+    <div class="container">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_logo.svg" alt="YouTube">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+        </div>
+        <h2>User Type: YouTuber</h2>
+        <p>Content creation, growth hacks, and new video ideas!</p>
     </div>
-    <iframe id="tgPlayer" width="100%" height="500" style="display:none;"></iframe>
-    <script src="script.js"></script>
+    <div class="content">
+        <div class="article">
+            <h3>iPhone 16e Launched in India</h3>
+            <p>Price, features, and full details.</p>
+        </div>
+        <div class="article">
+            <img src="https://example.com/cartoon.jpg" width="100%" alt="Cartoon">
+            <h3>Top 10 Funniest Grandma Cartoons</h3>
+            <p>Watch the best animated comedy moments.</p>
+        </div>
+        <div class="article">
+            <img src="https://example.com/space.jpg" width="100%" alt="Space Station">
+            <h3>NASA vs. Elon Musk: ISS Retirement Debate</h3>
+            <p>Elon Musk demands ISS retirement by 2026. NASA insists it still serves a purpose.</p>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('loggedIn')) {
+            let user = prompt('Please enter your username to continue:');
+            if (user) {
+                localStorage.setItem('loggedIn', 'true');
+            } else {
+                alert('You need to log in to access the site.');
+                window.location.reload();
+            }
+        }
+    </script>
 </body>
-</html>
+    </html>
